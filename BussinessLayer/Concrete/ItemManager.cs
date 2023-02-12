@@ -25,7 +25,7 @@ namespace BussinessLayer.Concrete
 
         public List<Item> GetList()
         {
-            return itemDal.GetAll();
+            return itemDal.GetAll().ToList();
         }
 
         public void ItemAdd(Item item)

@@ -1,0 +1,82 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title</title>
+    <link id="pagestyle" href="~/admin/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+        <div class="container">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
+                Həcc Management
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon mt-2">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                            <i class="fa fa-chart-pie opacity-6  me-1"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-2" asp-action="GetCurrentUser" asp-area="Admin" asp-controller="Admin">
+                            <i class="fa fa-user opacity-6  me-1"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-2" asp-action="Register" asp-area="Identity" asp-controller="Account">
+                            <i class="fas fa-user-circle opacity-6  me-1"></i>
+                            Create User
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-2" asp-action="Login" asp-area="Identity" asp-controller="Account">
+                            <i class="fas fa-key opacity-6  me-1"></i>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://i.ibb.co/2v04hrV/curved14.jpg');" />
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+                <form class="form-inline align-content-md-center" style="margin:auto;display:table;top:30%;position:fixed;left:45%;color:#fff" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link" style="font-size:large;color:#fff"><i class="bi bi-box-arrow-in-right"></i>Click Here To LogOut</button>
+                </form>
+        }
+        else
+        {
+                <p>You have successfully logged out of the application.</p>
+        }
+    }
+</body>
+</html>

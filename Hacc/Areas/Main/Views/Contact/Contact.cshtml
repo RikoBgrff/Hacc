@@ -1,4 +1,6 @@
-﻿@{
+﻿@using EntityLayer.Entities
+@model Contact
+@{
     ViewData["Title"] = "Əlaqə";
 }
 
@@ -28,7 +30,7 @@
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
                             <h4>Adres:</h4>
-                            <a href="https://goo.gl/maps/gBYGZvHMGBj5sKm28">7 Mirza Fatali Akhundov, Baku 1001, Azerbaycan</a>
+                            <a href="@Model.Address.AddressUrl">@Model.Address.Name</a>
                         </div>
                     </div>
 
@@ -36,7 +38,7 @@
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h4>Email:</h4>
-                            <a href="https://www.gmail.com/">qafqazmuselmanlar@gmail.com</a>
+                            <a href="https://www.gmail.com/">@Model.Email</a>
                         </div>
                     </div>
 
@@ -44,32 +46,31 @@
                         <i class="bi bi-phone flex-shrink-0"></i>
                         <div>
                             <h4>Telefon:</h4>
+                            @foreach(var item in Model.PhoneNumbers){
                             <p>
-                                +994 12 594-55-49
+                                @item.PhoneNumber
                             </p>
+                            }
                         </div>
                     </div>
                     <div class="info-item d-flex">
-                        <i class="bi bi-instagram flex-shrink-0"></i>
+                        <i class="bi bi-globe flex-shrink-0"></i>
                         <div>
-                            <h4>Instagram:</h4>
-                            <a href="https://instagram.com/qafqazmuselmanlar.ziyaret/">
-                                qafqazmuselmanlar.ziyaret
-                            </a>
+                            <h4>Sosial Media:</h4>
+                            @foreach (var item in Model.SocialMediaAccounts)
+                            {
+                                <p>
+                                    <a href="@item.Data">
+                                    @item.PlatformName
+                                  </a>
+                                </p>
+                            }
+
                         </div>
-                    </div>
-                    <div class="info-item d-flex">
-                        <i class="bi bi-whatsapp flex-shrink-0"></i>
-                        <div>
-                            <h4>Whatsapp:</h4>
-                            <a href="https://wa.me/">
-                                +994 70 700 07 07 
-                            </a>
                         </div>
-                    </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12158.676769385902!2d49.8291302!3d40.3718589!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ef508115852561b!2zUWFmcWF6IE3DvHPJmWxtYW5sYXLEsSDEsGRhcsmZc2k!5e0!3m2!1str!2str!4v1669933051999!5m2!1str!2str" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12158.676769385902!2d49.8291302!3d40.3718589!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ef508115852561b!2zUWFmcWF6IE3DvHPJmWxtYW5sYXLEsSDEsGRhcsmZc2k!5e0!3m2!1str!2str!4v1669933051999!5m2!1str!2str" width="800" height="450" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

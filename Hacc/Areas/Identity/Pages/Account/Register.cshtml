@@ -1,0 +1,129 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Create User";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="~/admin/css/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title</title>
+    <link id="pagestyle" href="~/admin/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+    <div class="container">
+        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
+            Həcc Management
+        </a>
+        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                        <i class="fa fa-chart-pie opacity-6  me-1"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-2" asp-action="GetCurrentUser" asp-area="Admin" asp-controller="Admin">
+                        <i class="fa fa-user opacity-6  me-1"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-2" asp-action="Register" asp-area="Identity" asp-controller="Account">
+                        <i class="fas fa-user-circle opacity-6  me-1"></i>
+                        Create User
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-2" asp-action="Login" asp-area="Identity" asp-controller="Account">
+                        <i class="fas fa-key opacity-6  me-1"></i>
+                        Login
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+
+<main class="main-content  mt-0">
+    <section class="min-vh-100 mb-8">
+        <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://i.ibb.co/2v04hrV/curved14.jpg');">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 text-center mx-auto">
+                        <h1 class="text-white mb-2 mt-5">Welcome!</h1>
+                        <p class="text-lead text-white">Only SuperAdmin can create new user<br />If you are not SuperAdmin and can access this page,<br />please contact with SuperAdmin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+                <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                    <div class="card z-index-0">
+                        <div class="card-header text-center pt-4">
+                            <h5>Create New User</h5>
+                        </div>
+                        <div class="row px-xl-5 px-sm-4 px-3">
+                            <div class="card-header text-center pt-4">
+                          <h5>Management Registration</h5>
+                          </div>
+                            <div class="mt-2 position-relative text-center">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                                <div class="mb-3">
+                                    <input type="email" placeholder="Email" input asp-for="Input.Email" class="form-control" autocomplete="off" aria-required="true">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="password" input asp-for="Input.Password" class="form-control" autocomplete="off" aria-required="true" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="password" input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="off" aria-required="true" placeholder="Confirm Password" aria-label="Password" aria-describedby="password-addon">
+                                </div>
+
+                                <div class="text-center">
+                                    <button id="registerSubmit" type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+</main>
+</body>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+</html>

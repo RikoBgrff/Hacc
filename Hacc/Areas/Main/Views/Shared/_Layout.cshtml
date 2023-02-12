@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,11 +45,10 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a asp-action="Index" asp-controller="Home" class="active">Əsas Səhifə</a></li>
-                    <li><a asp-action="About" asp-controller="About" >Haqqımızda</a></li>
-                    <li><a asp-action="Services" asp-controller="Services" >Xidmətlərimiz</a></li>
-                    <li><a asp-action="Team" asp-controller="Team" >Komandamız</a></li>
-                    <li><a asp-area="Blog" asp-controller="Main" asp-action="Index">Blog</a></li>
+                    <li><a asp-area ="Main" asp-action="Index" asp-controller="Home" class="active">Əsas Səhifə</a></li>
+                    <li><a asp-area ="Main" asp-action="About" asp-controller="About" >Haqqımızda</a></li>
+                    <li><a asp-area ="Main" asp-action="Trips" asp-controller="Trip" >Ziyarətlərimiz</a></li>
+                    <li><a asp-action="Contact" asp-controller="Contact" >Əlaqə</a></li>
                     <li class="dropdown">
                         <a href="#"><span>Virtual Rəhbər</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -67,7 +67,7 @@
                             <li><a href="#">Dropdown 4</a></li>
                         </ul>
                     </li>
-                    <li><a asp-action="Contact" asp-controller="Contact" >Əlaqə</a></li>
+                    <li><a asp-area="Blog" asp-controller="Blog" asp-action="Blog">Blog</a></li>
                 </ul>
             </nav>
 
@@ -96,33 +96,32 @@
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Sürətli Keçid</h4>
                         <ul>
-                            <li><i class="bi bi-dash"></i> <a asp-action="Index" asp-contoller="Home">Əsas Səhifə</a></li>
-                            <li><i class="bi bi-dash"></i> <a asp-action="About" asp-contoller="About">Haqqımızda</a></li>
-                            <li><i class="bi bi-dash"></i> <a asp-action="Services" asp-contoller="Services">Xidmətlərimiz</a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-controller="Home" asp-action="Index" >Əsas Səhifə</a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-controller="About" asp-action="About" >Haqqımızda</a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-controller="Trip" asp-action="Trips" >Ziyarətlərimiz</a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-area="Blog"  asp-controller="Blog" asp-action="Blog" >Xəbərlər</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-2 col-6 footer-links">
-                        <h4>Xidmətlərimiz</h4>
+                        <h4>Ziyarətlərimiz</h4>
                         <ul>
-                            <li><i class="bi bi-dash"></i> <a>Xidmət Adı </a></li>
-                            <li><i class="bi bi-dash"></i> <a>Xidmət Adı </a></li>
-                            <li><i class="bi bi-dash"></i> <a>Xidmət Adı </a></li>
-                            <li><i class="bi bi-dash"></i> <a>Xidmət Adı </a></li>
-                            <li><i class="bi bi-dash"></i> <a>Xidmət Adı </a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-controller="Trip" asp-action="Trip" asp-route-id="1">Həcc Ziyarəti </a></li>
+                            <li><i class="bi bi-dash"></i> <a asp-controller="Trip" asp-action="Trip" asp-route-id="2">Ümrə Ziyarəti </a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Bizimlə Əlaqə</h4>
                         <p>
-                            7 Mirza Fatali Akhundov<br>
-                            Baku 1001<br>
-                            Azerbaycan <br><br>
-                            <strong>Telefon:</strong> +994 12 594-55-49<br>
-                            <strong>Email:</strong> qafqazmuselmanlar@gmail.com <br>
+                            <i class="bi bi-dash"></i><strong>Adres:</strong>
+                             7 Mirza Fatali Akhundov<br>
+                              Baku 1001<br>
+                              Azerbaycan <br><br>
+                            <i class="bi bi-dash"></i>   <strong>Telefon:</strong> +994 12 594-55-49<br>
+                            <i class="bi bi-dash"></i>  <strong>Email:</strong> qafqazmuselmanlar@gmail.com <br>
                         </p>
 
                     </div>
@@ -137,7 +136,7 @@
                     &copy; Copyright <strong><span>Həcc</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
-                    Designed by <a href="https://www.youtube.com/channel/UCrUt4hG6B-pmDNpyIIwKTQw">rikotech</a>
+                    <a>Designed by rikotech</a>
                 </div>
             </div>
         </div>

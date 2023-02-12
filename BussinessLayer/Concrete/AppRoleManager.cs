@@ -40,7 +40,7 @@ namespace BussinessLayer.Concrete
 
         public List<AppRole> GetList()
         {
-            return roleDal.GetAll();
+            return roleDal.GetAll().ToList();
         }
     }
 }

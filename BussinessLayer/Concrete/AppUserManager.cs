@@ -25,7 +25,7 @@ namespace BussinessLayer.Concrete
 
         public void AppUserRemove(AppUser user)
         {
-            userDal.Update(user);
+            userDal.Delete(user);
         }
 
         public void AppUserUpdate(AppUser user)
@@ -40,7 +40,7 @@ namespace BussinessLayer.Concrete
 
         public List<AppUser> GetList()
         {
-            return userDal.GetAll();
+            return userDal.GetAll().ToList();
         }
     }
 }

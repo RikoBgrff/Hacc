@@ -9,5 +9,13 @@ namespace EntityLayer.Entities
 {
     public class AppRole:IdentityRole
     {
+        public AppRole()
+        {
+
+        }
+        public AppRole(string name)
+        {
+            Name = name;
+        }
     }
 }

@@ -8,16 +8,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Entities
 {
-    public class Item
+    public class Item:Entity
     {
-        [Key]
-        public int Id { get; set; }
-        [DisallowNull]
         public int CategoryId { get; set; }
-        public string? Title { get; set; }
-        public string? Description { get; set; }
-        public bool HaveImg { get; set; }
-        public string? ImageUrl { get; set; }
-        public int Status { get; set; }
     }
 }

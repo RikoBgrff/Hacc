@@ -1,0 +1,34 @@
+﻿@model AssignRoleToUserViewModel
+
+@{
+    ViewData["Title"] = "AssignRoleToUser";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AssignRoleToUser</h1>
+
+<h4>@ViewBag.Info</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AssignRoleToUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" autocomplete="off" readonly="true" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.DropDownListFor(m=>m.RoleName,new SelectList(ViewBag.Roles,"Value","Text"),new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="UsersList" asp-controller="Admin" asp-area="Admin">Back to List</a>
+</div>
+

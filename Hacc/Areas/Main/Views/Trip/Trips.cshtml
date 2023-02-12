@@ -1,0 +1,53 @@
+﻿@model List<EntityLayer.Entities.Trip>
+@{
+    ViewData["Title"] = "Ziyarətlərimiz";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('https://i.ibb.co/y05Ywst/about-header.jpg');">
+        <div class="container position-relative d-flex flex-column align-items-center">
+
+            <h2>Ziyarətlərimiz</h2>
+            <ol>
+                <li><a asp-action="Index" asp-controller="Home">Əsas Səhifə</a></li>
+                <li>Ziyarətlərimiz</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Ziyarətlərimiz</h2>
+
+            </div>
+
+            <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model)
+                    {
+                        <div class="swiper-slide">
+                            <a href="/Main/Trip/Trip/@item.Id">
+                            <div class="testimonial-item">
+                                <div class="stars">
+                                    <i class="@item.Icon"></i>
+                                </div>
+                                <img src="@item.ImageText" alt="">
+                                <h3>@item.Name</h3>
+                            </div>
+                            </a>
+                        </div>
+                        <!-- End testimonial item -->
+                    }
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+</main><!-- End #main -->

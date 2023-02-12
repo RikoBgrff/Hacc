@@ -33,7 +33,7 @@ namespace BussinessLayer.Concrete
 
         public List<Category> GetList()
         {
-            return _categoryDal.GetAll();
+            return _categoryDal.GetAll().ToList();
         }
     }
 }

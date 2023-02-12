@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 namespace EntityLayer.Entities
 {
     
-    public class Category
+    public class Category:Entity
     {
-        [Key]
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public int Status { get; set; }
-        [DisallowNull]
+        
         public int ParentId { get; set; }
+
+
 
     }
 }
