@@ -1,6 +1,4 @@
-﻿using MessagePack;
-
-namespace EntityLayer.Entities.Blog
+﻿namespace EntityLayer.Entities.Blog
 {
     public class Post
     {
