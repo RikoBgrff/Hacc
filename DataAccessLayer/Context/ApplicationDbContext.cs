@@ -1,5 +1,4 @@
 ﻿using EntityLayer.Entities;
-using EntityLayer.Entities.Blog;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -28,12 +27,6 @@ namespace DataAccessLayer.Context
         public virtual DbSet<Team>? Teams { get; set; }
         public virtual DbSet<Trip>? Trips { get; set; }
         public virtual DbSet<Contact>? Contacts { get; set; }
-        //Blog start
-        public virtual DbSet<Tag> Tags { get; set; }
-        public virtual DbSet<Blog> Blogs { get; set; }
-        public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
-        //Blog end
 
 
 

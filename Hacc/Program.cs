@@ -1,9 +1,6 @@
-using BussinessLayer.Abstract.BlogAbstract;
-using BussinessLayer.Concrete.BlogConcrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
 using DataAccessLayer.EntityFramework;
-using DataAccessLayer.EntityFramework.BlogEntityFramework;
 using EntityLayer.Entities;
 using Hacc.Services;
 using Microsoft.AspNetCore.Identity;
@@ -99,100 +96,100 @@ if (!app.Environment.IsDevelopment())
 ////service.ContactUpdate(contact);
 
 #endregion
-#region data
-EFBlogRepository blogRepo = new EFBlogRepository();
-IBlogService blogService = new BlogManager(blogRepo);
+//#region data
+//EFBlogRepository blogRepo = new EFBlogRepository();
+//IBlogService blogService = new BlogManager(blogRepo);
 
-EFPostRepository postRepo = new EFPostRepository();
-IPostService postService = new PostManager(postRepo);
+//EFPostRepository postRepo = new EFPostRepository();
+//IPostService postService = new PostManager(postRepo);
 
-EFTagRepository tagRepo = new EFTagRepository();
-ITagService tagService = new TagManager(tagRepo);
+//EFTagRepository tagRepo = new EFTagRepository();
+//ITagService tagService = new TagManager(tagRepo);
 
-//Creating data
+////Creating data
 
-//Post post = new Post();
-//post.Title = "Asp .Net Mvc New Video Published!";
-//post.Body = "Micrsoft Published New ASP .NET version with developers.Developers are very excited because they don't know how to change their .NET 6 projects to .NET 7";
-//post.CreateDate = DateTime.UtcNow;
-//post.Images = new List<Image> {
-//    new Image {
-//        Url= "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/api/page/6272284694675456/image/download/5249964031082496",
-//        BackupUrl="https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
-//        Status=1,
-//},
-//    new Image
-//    {
-//        Url="https://www.galaxy-education.com/wp-content/uploads/2022/11/ASP.Net-Programming-Courses-in-Abu-Dhabi.png",
-//        BackupUrl="https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
-//        Status=1,
-//    },
-//    new Image
-//    {Url = "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
-//        BackupUrl = "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
-//        Status = 1
-//    }
-//};
-//Image image = new Image
-//{
-//    Url = "https://img.stackshare.io/service/11331/asp.net-core.png"
-//};
-//post.Thumbnail = image.Url;
-//List<Tag> tags = new List<Tag>
-//{
-//    new Tag
-//    {
-//        Name = "Developing",
-//        Status = 1,
-//        CreateDate = DateTime.UtcNow,
-//    },
-//    new Tag
-//    {
-//        Name = "C#",
-//        Status = 1,
-//        CreateDate = DateTime.UtcNow,
-//    },
-//    new Tag
-//    {
-//        Name = "ASP .NET",
-//        Status = 1,
-//        CreateDate = DateTime.UtcNow,
-//    },
-//    new Tag
-//    {
-//        Name = "Web Developing",
-//        Status = 1,
-//        CreateDate = DateTime.UtcNow,
-//    },
-//};
-//post.Tags = tags;
-//post.Status = 1;
+////Post post = new Post();
+////post.Title = "Asp .Net Mvc New Video Published!";
+////post.Body = "Micrsoft Published New ASP .NET version with developers.Developers are very excited because they don't know how to change their .NET 6 projects to .NET 7";
+////post.CreateDate = DateTime.UtcNow;
+////post.Images = new List<Image> {
+////    new Image {
+////        Url= "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/api/page/6272284694675456/image/download/5249964031082496",
+////        BackupUrl="https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
+////        Status=1,
+////},
+////    new Image
+////    {
+////        Url="https://www.galaxy-education.com/wp-content/uploads/2022/11/ASP.Net-Programming-Courses-in-Abu-Dhabi.png",
+////        BackupUrl="https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
+////        Status=1,
+////    },
+////    new Image
+////    {Url = "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
+////        BackupUrl = "https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=600/v2api/collection/10370001/5168843929944064/image/5237286403047424",
+////        Status = 1
+////    }
+////};
+////Image image = new Image
+////{
+////    Url = "https://img.stackshare.io/service/11331/asp.net-core.png"
+////};
+////post.Thumbnail = image.Url;
+////List<Tag> tags = new List<Tag>
+////{
+////    new Tag
+////    {
+////        Name = "Developing",
+////        Status = 1,
+////        CreateDate = DateTime.UtcNow,
+////    },
+////    new Tag
+////    {
+////        Name = "C#",
+////        Status = 1,
+////        CreateDate = DateTime.UtcNow,
+////    },
+////    new Tag
+////    {
+////        Name = "ASP .NET",
+////        Status = 1,
+////        CreateDate = DateTime.UtcNow,
+////    },
+////    new Tag
+////    {
+////        Name = "Web Developing",
+////        Status = 1,
+////        CreateDate = DateTime.UtcNow,
+////    },
+////};
+////post.Tags = tags;
+////post.Status = 1;
 
-//EFImageRepository ImageRepo = new EFImageRepository();
-//IImageService imageService = new ImageManager(ImageRepo);
+////EFImageRepository ImageRepo = new EFImageRepository();
+////IImageService imageService = new ImageManager(ImageRepo);
 
-//imageService.ImageAdd(image);
-//foreach (var img in post.Images)
-//{
-//    imageService.ImageAdd(img);
-//}
-//foreach (var tag in tags)
-//{
-//    tagService.TagAdd(tag);
-//}
+////imageService.ImageAdd(image);
+////foreach (var img in post.Images)
+////{
+////    imageService.ImageAdd(img);
+////}
+////foreach (var tag in tags)
+////{
+////    tagService.TagAdd(tag);
+////}
 
-//postService.PostAdd(post);
+////postService.PostAdd(post);
 
-//Blog blog = new Blog();
-//blog.Name = "News";
-//blog.CreateTime = DateTime.UtcNow;
-//blog.Status = 1;
+////Blog blog = new Blog();
+////blog.Name = "News";
+////blog.CreateTime = DateTime.UtcNow;
+////blog.Status = 1;
 
 
 
-//blog.Posts.Add(post);
-//blogService.BlogAdd(blog);
-#endregion
+////blog.Posts.Add(post);
+////blogService.BlogAdd(blog);
+//#endregion
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -203,13 +200,13 @@ app.UseAuthorization();
 
 app.UseAuthorization();
 
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "areas",
-        pattern: "{area:exists=admin}/{controller=admin}/{action=RolesList}/{id?}");
+        pattern: "{area:exists=main}/{controller=home}/{action=index}/{id?}");
 });
-
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

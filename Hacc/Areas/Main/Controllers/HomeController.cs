@@ -1,11 +1,7 @@
 ﻿using BussinessLayer.Abstract;
-using BussinessLayer.Abstract.BlogAbstract;
 using BussinessLayer.Concrete;
-using BussinessLayer.Concrete.BlogConcrete;
 using DataAccessLayer.EntityFramework;
-using DataAccessLayer.EntityFramework.BlogEntityFramework;
 using EntityLayer.Entities;
-using EntityLayer.Entities.Blog;
 using Hacc.Areas.Main.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -41,22 +37,8 @@ namespace Hacc.Areas.Main.Controllers
                 TripType = i.TripType,
             }).ToList();
 
-            EFPostRepository eFPost = new EFPostRepository();
-            IPostService postService = new PostManager(eFPost);
-
-            var baselineDate = DateTime.Now.AddDays(-70);
-
-            var postList = postService.GetList().Select(i => new Post
-            {
-                Body = i.Body,
-                Title = i.Title,
-                CreateDate = i.CreateDate,
-                Id = i.Id,
-            }).Where(i => i.CreateDate > baselineDate).OrderByDescending(i => i.CreateDate).Take(4).ToList();
-
             IndexViewModel model = new IndexViewModel()
             {
-                Posts = postList,
                 Trips = tripList,
             };
 
